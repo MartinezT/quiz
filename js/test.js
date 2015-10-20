@@ -56,8 +56,8 @@ $(document).ready(function() {
 
 	$("body").on("click","input", function() {
 		$("input[type='radio']:checked").val();
-			var $selectedText=$("input[type='radio']:checked").val();
-			if($selectedText==quizQuestions[counter-1].answer) {
+		var $selectedText=$("input[type='radio']:checked").val();
+		if($selectedText==quizQuestions[counter-1].answer) {
 			score +=1;
 		}
 	
