@@ -1,0 +1,28 @@
+body {
+	background: silver;
+}
+
+.title{
+	font-size: 25px;
+	text-align: center;
+}
+#start{
+	text-align: center;
+	vertical-align: center;
+	margin-left: 430px;
+}
+#next{
+	display:none;
+	margin-left: 430px;
+}
+.choices{
+	margin-left: 340px;
+	text-align: left;
+	list-style: none;
+}
+.questions{
+	margin-left: 430px;
+}
+.quiz-app{
+	margin-top: 100px;
+}
