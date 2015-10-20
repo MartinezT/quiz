@@ -36,18 +36,14 @@ $(document).ready(function() {
 	});	
 
 	$("#next").on("click", function(){
-        	$(".choices, .questions").empty();
+        	$(".choices").empty();
 
-	  	function incrementCounter(){
-			$("#count").text(counter);
-      		};  
-      
 		if(quizQuestions[counter]) {
-          		$(".questions").append("<h2>" + quizQuestions[counter].question + "</h2>");
-			for (var i = 0 ; i < quizQuestions[counter].choices.length;i+=1) {
-				$(".choices").append( "<ul>" + "<input type='radio' name='radio' value=' " + i + " '/>" + quizQuestions[counter].choices[i] + "</ul>");
-			}
-                	incrementCounter();
+          		$('.questions h2').text(quizQuestions[counter].question);
+          		quizQuestions[counter].choices.forEach(function(choice, i) {
+          			$('.choices').append( "<li>" + "<input type='radio' name='radio' value=' " + i + " '/>" + choice + "</li>");
+          		});
+                	$("#count").text(counter);
 			counter++;
             	} else {
             		$("#score").text("score: " + score + " out of 5");
@@ -58,12 +54,7 @@ $(document).ready(function() {
 		$("input[type='radio']:checked").val();
 		var $selectedText=$("input[type='radio']:checked").val();
 		if($selectedText==quizQuestions[counter-1].answer) {
-			score +=1;
+			score += 1;
 		}
-	
-		if(counter > quizQuestions.length) {  
-		  
-		}
-				
 	});
 });
